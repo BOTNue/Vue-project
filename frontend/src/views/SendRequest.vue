@@ -1,7 +1,7 @@
 <script setup>
-
+import SendRequestForm from '@/components/SendRequestForm.vue';
 </script>
 
 <template>
-    <h1>hello</h1>
+    <SendRequestForm />
 </template>

@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose'
 import Elysia from 'elysia'
 import { cors } from '@elysiajs/cors'
 import { User } from './models/user'
-import { Upload } from './models/upload'
+import { Request } from './models/request'
 import { Helper } from './models/helper'
 
 const db = await mongoose.connect("mongodb+srv://joshua:BEjnCT1vVMK8Wg8S@cluster0.s9dkd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
@@ -44,19 +44,19 @@ new Elysia()
         return newHelper
     })
 
-    .post("/upload", async ({ body, set }) => {
-        const newUpload = new Upload({
+    .post("/request", async ({ body, set }) => {
+        const newRequest = new Request({
             product: body.product,
             problem: body.problem,
             description: body.description
         })
         try {
-            await newUpload.save()
+            await newRequest.save()
         } catch (error) {
             set.status = 400
             return error
         }
-        return newUpload
+        return newRequest
     })
 
     .post("/login", async ({ body, set }) => {

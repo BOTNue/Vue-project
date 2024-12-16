@@ -47,10 +47,7 @@ header {
     
 }
 
-.search {
-    position: absolute;
-    left: 225px;
-}
+
 
 .nav-bar {
     list-style: none;
