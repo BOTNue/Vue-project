@@ -59,6 +59,27 @@ new Elysia()
         return newRequest
     })
 
+    .get("/request", async ({ query, set }) => {
+        const { product, problem, description } = query
+
+        const filter: Record<string, any> = {};
+        if (product) filter.product = product
+        if (problem) filter.problem = problem
+        if (description) filter.description = description
+
+        try {
+            const request = await Request.find(filter)
+            if (request.length === 0) {
+                set.status = 404
+                return { message: "No requests found mathing search" }
+            }
+            return request
+        } catch (error) {
+            set.status = 500
+            return { message: "Error fetching requests" }
+        }
+    })
+
     .post("/login", async ({ body, set }) => {
         const { name, password } = body as LoginRequestBody;
 
