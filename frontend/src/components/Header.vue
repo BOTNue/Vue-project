@@ -1,14 +1,14 @@
 <script>
 import NavBar from './NavBar.vue'
 import LoginButton from './LoginButton.vue'
-import SigninButton from './SigninButton.vue'
+import SignupButton from './SignupButton.vue'
 import SearchBar from './SearchBar.vue'
 
 export default {
     components: {
         NavBar,
         LoginButton,
-        SigninButton,
+        SignupButton,
         SearchBar
     }
 }
@@ -24,7 +24,7 @@ export default {
         </div>
         <h1></h1>
         <div class="user-action">
-            <SigninButton />
+            <SignupButton />
             <LoginButton />
         </div>
 

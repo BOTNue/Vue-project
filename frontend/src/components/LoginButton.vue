@@ -1,15 +1,10 @@
 <script>
-export default {
-    data() {
-        return {
-
-        }
-    }
-}
 </script>
 
 <template>
-    <button class="login-btn">Login</button>
+    <button class="login-btn">
+        <a href="/login">Login</a>
+    </button>
 </template>
 
 <style scoped></style>
