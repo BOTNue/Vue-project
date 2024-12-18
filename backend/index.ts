@@ -44,6 +44,28 @@ new Elysia()
         return newHelper
     })
 
+    .get("/helper", async ({ query, set }) => {
+        const { name, password, skills, rating } = query
+
+        const filter: Record<string, any> = {}
+        if (name) filter.name = name
+        if (password) filter.password = password
+        if (skills) filter.skills = skills
+        if (rating) filter.rating = rating
+
+        try {
+            const helper = await Helper.find(filter)
+            if (helper.length === 0) {
+                set.status = 404
+                return { message: "No helpers found matching search" }
+            }
+            return helper
+        } catch (error) {
+            set.status = 500
+            return { message: "Error fetching helpers" }
+        }
+    })
+
     .post("/request", async ({ body, set }) => {
         const newRequest = new Request({
             product: body.product,

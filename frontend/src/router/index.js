@@ -5,6 +5,8 @@ import SignUp from '@/views/SignUp.vue'
 import Login from '@/views/Login.vue'
 import HelpRequest from '@/views/HelpRequest.vue'
 import SendRequest from '@/views/SendRequest.vue'
+import Helpers from "@/views/Helpers.vue"
+import HelperSignup from '@/views/HelperSignup.vue'
 
 const routes = [
     { path: "/", name: "Home", component: Home },
@@ -12,7 +14,9 @@ const routes = [
     { path: "/signup", name: "Signup", component: SignUp },
     { path: "/login", name: "Login", component: Login },
     { path: "/helprequest", name: "HelpRequest", component: HelpRequest },
-    { path: "/sendrequest", name: "SendRequest", component: SendRequest }
+    { path: "/sendrequest", name: "SendRequest", component: SendRequest },
+    { path: "/helpers", name: "helpers", component: Helpers },
+    { path: "/helpersignup", name: "helpersignup", component: HelperSignup }
 ]
 
 const router = createRouter({

@@ -21,7 +21,7 @@ export default {
 
 <template>
     <ul class="requestcard">
-        <li v-for="(request, index) in requests" :key="index">
+        <li v-for="request in requests">
             <strong>Product:</strong> {{ request.product }} <br> 
             <strong>Problem:</strong> {{ request.problem }} <br> 
             <strong>description:</strong> {{ request.description }}
@@ -32,9 +32,8 @@ export default {
 <style scoped>
 .requestcard {
     list-style-type: none;
-}
-
-.li {
-    margin-bottom: 1rem;
+    color: aliceblue;
+    display: flex;
+    gap: 2rem;
 }
 </style>
