@@ -5,7 +5,7 @@ import { User } from './models/user'
 import { Request } from './models/request'
 import { Helper } from './models/helper'
 
-const db = await mongoose.connect("mongodb+srv://joshua:BEjnCT1vVMK8Wg8S@cluster0.s9dkd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+const db = await mongoose.connect("Enter MongoDB connection here");
 
 interface LoginRequestBody {
     name: "string",

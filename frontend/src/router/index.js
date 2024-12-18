@@ -15,7 +15,7 @@ const routes = [
     { path: "/login", name: "Login", component: Login },
     { path: "/helprequest", name: "HelpRequest", component: HelpRequest },
     { path: "/sendrequest", name: "SendRequest", component: SendRequest },
-    { path: "/helpers", name: "helpers", component: Helpers },
+    { path: "/helpers", component: Helpers },
     { path: "/helpersignup", name: "helpersignup", component: HelperSignup }
 ]
 
